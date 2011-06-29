@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.6.4//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.6.4/distro-source/core/src/gwt-module.dtd">
+<module rename-to='zmachine'>
+
+	<!-- Inherit the core Web Toolkit stuff.                  -->
+	<inherits name='com.google.gwt.user.User'/>
+	
+	<inherits name="com.google.gwt.http.HTTP" />
+	<inherits name='com.google.gwt.gears.Gears'/>
+	<inherits name='com.google.gwt.gears.Offline'/>
+	<inherits name="com.google.gwt.json.JSON" />
+	
+	<!-- Add gwt-log support, default level `OFF` -->
+    <inherits name="com.allen_sauer.gwt.log.gwt-log-OFF" />  
+    
+    <set-property name="log_ConsoleLogger" value="DISABLED" />
+	<set-property name="log_DivLogger" value="DISABLED" />
+	<set-property name="log_FirebugLogger" value="DISABLED" />
+	<set-property name="log_GWTLogger" value="ENABLED" />
+	<set-property name="log_SystemLogger" value="DISABLED" />
+      
+
+	<!-- Specify the app entry point class.                   -->
+	<entry-point class='de.lilawelt.zmachine.client.Machine'/>
+	
+  
+  	<!-- <inherits name="com.google.gwt.user.theme.standard.Standard"/> -->
+  	<!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
+  	<!-- <inherits name="com.google.gwt.user.theme.dark.Dark"/> -->
+  	
+  	<!--  use the gears offline stuff? -->
+  	<define-property name="use_offline" values="false,true" />
+  	<property-provider name="use_offline">
+  	<![CDATA[
+    if ( typeof Parameters=="object" && typeof Parameters.offline=="boolean" ) {
+      if (Parameters.offline == true) {
+		return "true";
+	  }
+	 }  	 
+  	 return "false";
+  	]]>
+  	</property-provider>
+  	
+	<replace-with class="de.lilawelt.zmachine.client.storage.GearsAdapterReal">
+		<when-type-is class="de.lilawelt.zmachine.client.storage.GearsAdapterImpl"/>
+		<when-property-is name="gears.installed" value="true"/>
+	</replace-with>
+  	
+  	
+  	<replace-with class="de.lilawelt.zmachine.client.offline.OfflineMenuImplReal">
+		<when-type-is class="de.lilawelt.zmachine.client.offline.OfflineMenuImpl"/>
+		<when-property-is name="gears.installed" value="true"/>
+		<when-property-is name="use_offline" value="true"/>
+	</replace-with>
+</module>

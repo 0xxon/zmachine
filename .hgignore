@@ -1,0 +1,11 @@
+syntax: glob
+.*.swp
+.DS_Store
+war/WEB-INF/classes
+war/zmachine
+war/WEB-INF/appengine-generated
+war/WEB-INF/deploy
+war/WEB-INF/lib
+lib
+.gwt/.gwt-log
+src/log4j.properties

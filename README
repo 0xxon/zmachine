@@ -1,26 +1,28 @@
 This is the Readme for the GWT Z-Machine interpreter.
 
-The source is licensed under the GNU AFFERO GENERAL 
+The source is licensed under the GNU AFFERO GENERAL
 PUBLIC LICENSE version 3 -- see the LICENSE file.
 
-The interpreter is based on the ZAX interpreter of 
-Matt Kimmel, which can be downloaded from 
+The interpreter is based on the ZAX interpreter of
+Matt Kimmel, which can be downloaded from
 https://github.com/mattkimmel/zax/.
 
-To compile the source, the gwt-log library and the 
-gwt-gears libraries have to be downloaded from 
-http://code.google.com/p/gwt-log/ and 
-http://code.google.com/p/gwt-google-apis/wiki/Downloads?tm=2 
+To compile the source, the gwt-log library and the
+gwt-gears libraries have to be downloaded from
+http://code.google.com/p/gwt-log/ and
+http://code.google.com/p/gwt-google-apis/wiki/Downloads?tm=2
 respectively.
 
-Other than that, only the GWT is required -- 
+Other than that, only the GWT is required --
 this source version works with GWT Version 2.3.
 
-This was my first GWT project and one of my 
-first java projects, so not everything is 
-done in an elegant way. For example the way 
-special character support was added to ZAX is 
+This was my first GWT project and one of my
+first java projects, so not everything is
+done in an elegant way. For example the way
+special character support was added to ZAX is
 very dirty.
 
-For a live site using the interpreter, please 
+For a live site using the interpreter, please
 visit http://z-machine.lilawelt.de
+
+- Johanna Amann
